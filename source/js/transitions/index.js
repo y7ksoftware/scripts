@@ -12,6 +12,19 @@ require('transitions/modules');
 
 
 Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
+// ------------------------------------------------------------------------
+// HISTORY
+// ------------------------------------------------------------------------
+
+// Use custom history to save state
+window.pjaxHistory = new History();
+
+// Overwrite goto method to use custom history goto
+Barba.Pjax.goTo = function(url) {
+    window.pjaxHistory.goTo(url);
+    this.onStateChange();
+};
+
 
 
 
