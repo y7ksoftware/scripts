@@ -17,5 +17,10 @@ Vue.mixin({delimiters: ['${', '}']});
 // Vue.config.lang = 'en';
 // Vue.locale('en', require('locales/en').default);
 
-// Init the Vuex Store
-// Vue.mixin({ store })
+
+// ------------------------------------------------------------------------
+// Vuex Store
+// ------------------------------------------------------------------------
+Vue.use(Vuex);
+window.store = require('store').default;
+Vue.mixin({ store });
