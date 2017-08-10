@@ -1,4 +1,3 @@
-/* global _paq */
 import * as config from 'config';
 import History from 'transitions/history';
 
@@ -14,18 +13,17 @@ require('transitions/modules');
 
 Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
 
-    // set active class in navigation
-    /*
-    const link = currentStatus.url;// get path of current page
 
-    const navigation = document.querySelector('.site-navigation');
-    const navigationLinks = navigation.querySelectorAll('.js-navigation');
-    const navigationLinkIsActive = navigation.querySelector(`[href="${link}"]`);
 
-    Array.prototype.forEach.call(navigationLinks, (navigationLink) => navigationLink.classList.remove('active')); // remove CSS class 'active' from all .navigation__links
 
-    if (navigationLinkIsActive) navigationLinkIsActive.classList.add('active'); // add CSS class to current .navigation__link
-    */
+// ------------------------------------------------------------------------
+// UPDATE ACTIVE URL & TRACKING CODE
+// ------------------------------------------------------------------------
+
+Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
+
+    // Add active URL to store (so main navigation can react)
+    // store.dispatch('setActiveUrl', currentStatus.url);
 
     // Track Pageview
     if (typeof(_paq) !== 'undefined') {
@@ -33,10 +31,14 @@ Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
         _paq.push(['trackPageView']);
     }
 
-})
+});
 
 
-// Main page transition
+
+// ------------------------------------------------------------------------
+// GET TRANSITION
+// ------------------------------------------------------------------------
+
 Barba.Pjax.getTransition = function () {
     return require('transitions/base').default;
 };

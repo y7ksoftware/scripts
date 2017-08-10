@@ -1,37 +1,46 @@
-import {startTransition, endTransition} from 'transitions/timelines/base'
+import {animateOldContainer, animateNewContainer} from 'transitions/timelines/base';
 
 export default Barba.BaseTransition.extend({
 
     start() {
 
-        Barba.Dispatcher.trigger('startTransitionStarted')
+        Barba.Dispatcher.trigger('animateOldContainerStarted');
+
+        // Save scroll position before going to next page (so we can restore it when coming back)
+        pjaxHistory.setPrev('scrollPos', window.scrollY || window.savedScrollPos);
 
         // Start loading the content
         // Start the animation
         Promise.all([
             this.newContainerLoading,
-            startTransition(this.oldContainer),
+            animateOldContainer(this.oldContainer),
         ])
-            .then(this.finish.bind(this))
+            .then(this.finish.bind(this));
 
     },
 
 
     finish() {
 
-        Barba.Dispatcher.trigger('startTransitionEnded')
-        Barba.Dispatcher.trigger('endTransitionStarted')
+        Barba.Dispatcher.trigger('animateOldContainerEnded');
+        Barba.Dispatcher.trigger('animateNewContainerStarted');
 
         // done() removes the old container and sets the visibility of the new container
-        this.done()
+        this.done();
 
-        // Scroll to page top
-        document.body.scrollTop = 0;
+        // When we transition back in history, we restore the scroll position where we were before. Else
+        // we always scroll back to the top
+        if(pjaxHistory.isBackwards()) {
+            const lastScrollPos = pjaxHistory.get('scrollPos', 0);
+            window.scrollTo(0, lastScrollPos);
+        } else {
+            window.scrollTo(0, 0);
+        }
 
-        endTransition(this.newContainer)
+        animateNewContainer(this.newContainer)
             .then(() => {
-                Barba.Dispatcher.trigger('endTransitionEnded')
-            })
+                Barba.Dispatcher.trigger('animateNewContainerEnded');
+            });
 
     },
 

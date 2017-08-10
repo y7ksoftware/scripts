@@ -17,7 +17,7 @@ Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
 
 });
 
-Barba.Dispatcher.on('startTransitionEnded', function () {
+Barba.Dispatcher.on('animateOldContainerEnded', function () {
     // Unmount Modules
     unMountModules(Barba.BaseView.oldMountedModules);
 });
