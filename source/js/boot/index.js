@@ -1,33 +1,47 @@
-import * as config from 'config'
+//import * as config from 'config';
 
-// Load Bugsang
+// ------------------------------------------------------------------------
+// Bugsnag
+// ------------------------------------------------------------------------
 require('boot/bugsnag');
 
 
-// First thing, run the polyfills
+// ------------------------------------------------------------------------
+// Polyfills
+// ------------------------------------------------------------------------
 require('boot/polyfills');
 
 
+// ------------------------------------------------------------------------
 // Lodash
+// ------------------------------------------------------------------------
 // window._ = require('lodash');
 
 
-// Bootstrap Vue
+// ------------------------------------------------------------------------
+// Vue
+// ------------------------------------------------------------------------
 require('boot/vue');
 
 
-// Enable Transitions / Barba
+// ------------------------------------------------------------------------
+// Barba.js transitions
+// ------------------------------------------------------------------------
 // require('transitions');
 
 
-// Initialize Lazyizes
+// ------------------------------------------------------------------------
+// Lazysizes
+// ------------------------------------------------------------------------
 // require('lazysizes');
 // require('lazysizes/plugins/object-fit/ls.object-fit.min');
 // require('lazysizes/plugins/parent-fit/ls.parent-fit');
 // require('lazysizes/plugins/unveilhooks/ls.unveilhooks.min');
 
 
-// Load Axios
+// ------------------------------------------------------------------------
+// Axios
+// ------------------------------------------------------------------------
 window.axios = require('axios');
 
 // axios.defaults.baseURL = config.API_PREFIX
@@ -36,6 +50,7 @@ axios.defaults.headers.common = {
     // 'X-CSRF-TOKEN': window.csrfToken,
     'X-Requested-With': 'XMLHttpRequest'
 };
+
 
 // ------------------------------------------------------------------------
 // Tools
