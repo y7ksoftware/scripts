@@ -37,3 +37,8 @@ axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest'
 };
 
+// ------------------------------------------------------------------------
+// Tools
+// ------------------------------------------------------------------------
+require('utils/keyboardFocusOutliner')();
+require('utils/debugGrid')();
