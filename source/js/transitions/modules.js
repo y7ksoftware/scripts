@@ -1,7 +1,7 @@
 import {mountModules, unMountModules} from 'utils/modules';
 
-// Import Modules
-import DemoModule from 'modules/DemoModule.vue'
+// VueContainer module holds all children components
+import VueContainer from 'modules/VueContainer.vue';
 
 
 Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
@@ -12,10 +12,10 @@ Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
 
     // Load all modules
     Barba.BaseView.mountedModules = mountModules([
-        DemoModule
+        VueContainer
     ], container);
 
-})
+});
 
 Barba.Dispatcher.on('startTransitionEnded', function () {
     // Unmount Modules
