@@ -13,8 +13,6 @@ Vue.mixin({delimiters: ['${', '}']});
 
 // Init Localisation
 
-// Init the Router
-// Vue.mixin({ router })
 // Vue.use(VueIl8n);
 // Vue.config.lang = 'en';
 // Vue.locale('en', require('locales/en').default);

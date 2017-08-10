@@ -27,14 +27,5 @@ require('boot');
 // ], document)
 
 
-/*
- * ----------------------------------------------------------------------------------------
- * Single Page Applications (SPA) be like this instead
- */
 
-// import App from 'components/App.vue'
-//
-// new Vue({
-//     render: h => h(App)
-// }).$mount('#app')
 
