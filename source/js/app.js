@@ -1,6 +1,5 @@
 
 // Boot up
-require('boot')
 
 /**
  * * ----------------------------------------------------------------------------------------
@@ -19,6 +18,7 @@ require('boot')
  * You don't need this if you load modules inside a barba container
  * or if u build a SPA app
  */
+require('boot');
 
 // import DemoModule from 'modules/DemoModule.vue'
 //

@@ -1,13 +1,15 @@
 /* global _paq */
+import * as config from 'config';
+import History from 'transitions/history';
 
 // Init Barba.js
-window.Barba = require('barba.js')
+window.Barba = require('barba.js');
 
 // Initalize the views
-require('transitions/views')
+require('transitions/views');
 
 // Initalize the modules
-require('transitions/modules')
+require('transitions/modules');
 
 
 Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
@@ -27,8 +29,8 @@ Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
 
     // Track Pageview
     if (typeof(_paq) !== 'undefined') {
-        _paq.push(['setCustomUrl', currentStatus.url])
-        _paq.push(['trackPageView'])
+        _paq.push(['setCustomUrl', currentStatus.url]);
+        _paq.push(['trackPageView']);
     }
 
 })
@@ -36,5 +38,5 @@ Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
 
 // Main page transition
 Barba.Pjax.getTransition = function () {
-    return require('transitions/base').default
-}
+    return require('transitions/base').default;
+};

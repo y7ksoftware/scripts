@@ -9,5 +9,5 @@
             console.log('Module mounted to ' + this.$el);
         }
 
-    }
+    };
 </script>

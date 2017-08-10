@@ -13,7 +13,7 @@ export function startTransition(oldContainer) {
         //     })
 
         // Remove this, if you use the animation above!
-        resolve()
+        resolve();
 
     })
 
@@ -32,8 +32,8 @@ export function endTransition(newContainer) {
         //     })
 
         // Remove this, if you use the animation above!
-        resolve()
-    })
+        resolve();
+    });
 
 }
 
