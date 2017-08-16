@@ -4,7 +4,7 @@
  * add add custom focus style for tabkey navigation to increase accessability
  */
 
-export default function() {
+export function init() {
 
     const TABKEY = 9;
 

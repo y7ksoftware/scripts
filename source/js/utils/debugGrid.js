@@ -6,7 +6,7 @@ import * as config from 'config';
  * Show hide with "ALT + G" (only in dev mode)
  */
 
-export default function() {
+export function init() {
 
     const DEBUG_GRID_KEY = 71; // g
 
