@@ -20,10 +20,10 @@ require('boot');
 // Enable Barba Page Transitions
 // ------------------------------------------------------------------------
 
-document.addEventListener("DOMContentLoaded", () => {
-    Barba.Pjax.start();
-    Barba.Prefetch.init();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//     Barba.Pjax.start();
+//     Barba.Prefetch.init();
+// });
 
 
 // ------------------------------------------------------------------------
