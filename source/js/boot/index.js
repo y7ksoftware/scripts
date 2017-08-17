@@ -57,5 +57,4 @@ axios.defaults.headers.common = {
 // ------------------------------------------------------------------------
 // Tools
 // ------------------------------------------------------------------------
-// require('utils/keyboardFocusOutliner').init();
-// require('utils/debugGrid').init();
+require('boot/tools');
