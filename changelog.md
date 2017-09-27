@@ -1,5 +1,8 @@
 # Y7K Scripts Changelog
 
+## Version 0.3.*
+* Updated Packages
+
 ## Version 0.2.*
 * Add possibility to mount nested vue components while keeping their twig templates
 * Use semicolons
