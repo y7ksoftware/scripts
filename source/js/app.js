@@ -2,7 +2,7 @@ import Vue from 'vue';
 import {mountModules} from 'utils/modules';
 
 // Modules (Global)
-import DemoModule from 'modules/DemoModule.vue';
+import VueContainer from 'modules/VueContainer.vue';
 
 // All Vue components
 import DemoComponent from 'components/DemoComponent.vue';
@@ -14,8 +14,6 @@ import DemoComponent from 'components/DemoComponent.vue';
 
 require('boot');
 
-
-
 // ------------------------------------------------------------------------
 // Enable Barba Page Transitions
 // ------------------------------------------------------------------------
@@ -25,19 +23,16 @@ require('boot');
 //     Barba.Prefetch.init();
 // });
 
-
 // ------------------------------------------------------------------------
 // Register Vue Components
 // ------------------------------------------------------------------------
 
 Vue.component('demo-component', DemoComponent);
 
-
-
 // ------------------------------------------------------------------------
 // Mount normal Vue Components (outside of Barba container)
 // ------------------------------------------------------------------------
 
 mountModules([
-    DemoModule
+    VueContainer
 ], document);
