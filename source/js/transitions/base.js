@@ -33,8 +33,10 @@ export default Barba.BaseTransition.extend({
         if(pjaxHistory.isBackwards()) {
             const lastScrollPos = pjaxHistory.get('scrollPos', 0);
             window.scrollTo(0, lastScrollPos);
+            document.body.scrollTop = lastScrollPos;
         } else {
             window.scrollTo(0, 0);
+            document.body.scrollTop = 0;
         }
 
         animateNewContainer(this.newContainer)
