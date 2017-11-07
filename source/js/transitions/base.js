@@ -7,7 +7,7 @@ export default Barba.BaseTransition.extend({
         Barba.Dispatcher.trigger('animateOldContainerStarted');
 
         // Save scroll position before going to next page (so we can restore it when coming back)
-        pjaxHistory.setPrev('scrollPos', window.scrollY || window.savedScrollPos);
+        pjaxHistory.setPrev('scrollPos', window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || window.savedScrollPos);
 
         // Start loading the content
         // Start the animation
@@ -33,10 +33,10 @@ export default Barba.BaseTransition.extend({
         if(pjaxHistory.isBackwards()) {
             const lastScrollPos = pjaxHistory.get('scrollPos', 0);
             window.scrollTo(0, lastScrollPos);
-            document.body.scrollTop = lastScrollPos;
+            // document.body.scrollTop = lastScrollPos;
         } else {
             window.scrollTo(0, 0);
-            document.body.scrollTop = 0;
+            // document.body.scrollTop = 0;
         }
 
         animateNewContainer(this.newContainer)
