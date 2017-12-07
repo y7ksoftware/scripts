@@ -25,3 +25,5 @@ Vue.mixin({delimiters: ['${', '}']});
 Vue.use(Vuex);
 window.store = require('store').default;
 Vue.mixin({ store });
+
+// $cli-hook-boot-vue
