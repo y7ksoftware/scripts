@@ -3,7 +3,7 @@ import * as config from 'config';
 // ------------------------------------------------------------------------
 // Bugsnag
 // ------------------------------------------------------------------------
-if(!config.APP_DEBUG) {
+if(config.BUGSNAG_API_KEY_JS) {
     require('boot/bugsnag');
 }
 
