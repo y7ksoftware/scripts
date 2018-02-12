@@ -15,6 +15,7 @@ window.savedScrollPos = 0;
 export function disableScroll() {
     window.savedScrollPos = window.scrollY || document.documentElement.scrollTop;
     document.body.style.top = (-1 * window.savedScrollPos) + 'px';
+    document.body.style.width = '100%';
     document.body.style.position = 'fixed';
 
 }
@@ -26,6 +27,7 @@ export function disableScroll() {
 export function enableScroll() {
     document.body.style.top = '';
     document.body.style.position = '';
+    document.body.style.width = '';
     window.scrollTo(0, window.savedScrollPos);
     //window.savedScrollPos = 0;
 }
