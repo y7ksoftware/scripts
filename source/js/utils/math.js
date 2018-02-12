@@ -47,3 +47,18 @@ export function padNumber(n, width, z) {
 }
 
 
+
+/**
+ * Returns a random integer number in the range of min - max (min/max included)
+ */
+export function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+/**
+ * Converts "deg" degrees to "rad" degrees
+ */
+export function degToRad(degrees) {
+    return degrees * Math.PI / 180;
+}
