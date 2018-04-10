@@ -22,7 +22,6 @@ Barba.Pjax.Dom.containerClass = 'js-barbaContainer';
 Barba.Utils.xhrTimeout = config.APP_DEBUG ? 20000 : 5000;
 
 
-
 // ------------------------------------------------------------------------
 // HISTORY
 // ------------------------------------------------------------------------
@@ -31,11 +30,10 @@ Barba.Utils.xhrTimeout = config.APP_DEBUG ? 20000 : 5000;
 window.pjaxHistory = new History();
 
 // Overwrite goto method to use custom history goto
-Barba.Pjax.goTo = function(url) {
+Barba.Pjax.goTo = (url) => {
     window.pjaxHistory.goTo(url);
     this.onStateChange();
 };
-
 
 
 // ------------------------------------------------------------------------
@@ -48,7 +46,7 @@ Barba.Pjax.originalPreventCheck = Barba.Pjax.preventCheck;
 // on all links that lead to files (meaning having "/storage/" in the URL)
 //
 // Add more exceptions here if you want.
-Barba.Pjax.preventCheck = function(evt, element) {
+Barba.Pjax.preventCheck = (evt, element) => {
     if (!Barba.Pjax.originalPreventCheck(evt, element)) {
         return false;
     }
@@ -58,34 +56,30 @@ Barba.Pjax.preventCheck = function(evt, element) {
         return false;
     }
 
-  return true;
+    return true;
 };
-
 
 
 // ------------------------------------------------------------------------
 // UPDATE ACTIVE URL & TRACKING CODE
 // ------------------------------------------------------------------------
 
-Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
-
+Barba.Dispatcher.on('newPageReady', (currentStatus /* , oldStatus */ /* , container */) => {
     // Add active URL to store (so main navigation can react)
     // store.dispatch('setActiveUrl', currentStatus.url);
 
     // Track Pageview
-    if (typeof(_paq) !== 'undefined') {
-        _paq.push(['setCustomUrl', currentStatus.url]);
-        _paq.push(['trackPageView']);
+    if (typeof window._paq !== 'undefined') {
+        window._paq.push(['setCustomUrl', currentStatus.url]);
+        window._paq.push(['trackPageView']);
     }
-
 });
-
 
 
 // ------------------------------------------------------------------------
 // GET TRANSITION
 // ------------------------------------------------------------------------
 
-Barba.Pjax.getTransition = function () {
+Barba.Pjax.getTransition = () => {
     return require('transitions/base').default;
 };

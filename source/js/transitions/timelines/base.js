@@ -1,23 +1,17 @@
-//import {TimelineLite, TweenLite} from 'gsap'
+// import {TimelineLite, TweenLite} from 'gsap'
 
-export function animateOldContainer(oldContainer) {
-
+export function animateOldContainer(/* oldContainer */) {
     return new Promise((resolve) => {
-
         // Example with GSAP
         // new TimelineLite({ onComplete: resolve}).to(oldContainer, 0.5, {opacity: 0 }, '+=0');
 
         // Remove this, if you use the animation above!
         resolve();
-
     });
-
 }
 
-export function animateNewContainer(newContainer) {
-
+export function animateNewContainer(/* newContainer */) {
     return new Promise((resolve) => {
-
         // Example with GSAP
         // new TimelineLite({
         //     onComplete: () => {
@@ -29,7 +23,4 @@ export function animateNewContainer(newContainer) {
         // Remove this, if you use the animation above!
         resolve();
     });
-
 }
-
-

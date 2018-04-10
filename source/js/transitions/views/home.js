@@ -30,6 +30,6 @@ export default Barba.BaseView.extend({
      */
     onLeaveCompleted() {
 
-    }
+    },
 });
 

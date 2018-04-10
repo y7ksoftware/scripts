@@ -13,18 +13,17 @@ export default class History {
      *
      */
     constructor() {
-
         // Create new session storage for pjax history
-        if(window.history.state === null) {
+        if (window.history.state === null) {
             const state = sessionStorage.getItem('history') || 0;
-            window.history.replaceState(parseInt(state), null, window.location);
+            window.history.replaceState(parseInt(state, 10), null, window.location);
         }
 
         this.prevState = 0;
         this.state = window.history.state;
 
         // When going back in the history, load the previous state
-        window.addEventListener('popstate', event => {
+        window.addEventListener('popstate', (event) => {
             sessionStorage.setItem('history', event.state);
             this.prevState = this.state;
             this.state = event.state;

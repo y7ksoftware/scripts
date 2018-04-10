@@ -1,24 +1,22 @@
-import {mountModules, unMountModules} from 'utils/modules';
 import Barba from 'barba.js';
+import { mountModules, unMountModules } from 'utils/modules';
 
 // VueContainer module holds all children components
-import VueContainer from 'modules/VueContainer.vue';
+import VueContainer from 'modules/VueContainer';
 
 
 Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
-
     // Save modules from the old container, so we can unmount them,
     // as soon as the old container leaving transition is done
     Barba.BaseView.oldMountedModules = Barba.BaseView.mountedModules;
 
     // Load all modules
     Barba.BaseView.mountedModules = mountModules([
-        VueContainer
+        VueContainer,
     ], container);
-
 });
 
-Barba.Dispatcher.on('animateOldContainerEnded', function () {
+Barba.Dispatcher.on('animateOldContainerEnded', () => {
     // Unmount Modules
     unMountModules(Barba.BaseView.oldMountedModules);
 });
