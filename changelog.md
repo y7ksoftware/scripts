@@ -1,6 +1,11 @@
 # Y7K Scripts Changelog
 
 ## Version 0.3.*
+* Add new Eslint Rules (based in AirBnb)
+* Refactor plate code according to eslint rules
+* Remove lodash dependency on barba history
+
+## Version 0.2.3
 * Updated Packages
 
 ## Version 0.2.*
