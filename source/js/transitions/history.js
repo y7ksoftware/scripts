@@ -1,4 +1,3 @@
-import { set, get } from 'lodash';
 
 /**
  * This addon allows us to save state information in the pjax history.
@@ -62,28 +61,12 @@ export default class History {
 
 
     /**
-     *  Write data to session storage
-     */
-    setSessionData(data = {}) {
-        sessionStorage.setItem('historyData', JSON.stringify(data));
-    }
-
-
-    /**
-     * Get Data from session storage
-     */
-    getSessionData() {
-        const data = sessionStorage.getItem('historyData') || null;
-        if(data === null) return {};
-        return JSON.parse(data);
-    }
-
-
-    /**
      * Set history state
      */
     set(key, value) {
-        this.setSessionData(set(this.getSessionData(), this.state + '.' + key, value));
+        const historyData = History.getSessionData();
+        historyData[`${this.state}.${key}`] = value;
+        History.setSessionData(historyData);
     }
 
 
@@ -91,7 +74,9 @@ export default class History {
      * Set prev history state
      */
     setPrev(key, value) {
-        this.setSessionData(set(this.getSessionData(), this.prevState + '.' + key, value));
+        const historyData = History.getSessionData();
+        historyData[`${this.prevState}.${key}`] = value;
+        History.setSessionData(historyData);
     }
 
 
@@ -99,7 +84,9 @@ export default class History {
      * Get history state
      */
     get(key, defaultValue = null) {
-        return get(this.getSessionData(), this.state + '.' + key, defaultValue);
+        const historyData = History.getSessionData();
+        const value = historyData[`${this.state}.${key}`];
+        return value || defaultValue;
     }
 
 
@@ -107,7 +94,27 @@ export default class History {
      * Get prev history state
      */
     getPrev(key, defaultValue = null) {
-        return get(this.getSessionData(), this.prevState + '.' + key, defaultValue);
+        const historyData = History.getSessionData();
+        const value = historyData[`${this.prevState}.${key}`];
+        return value || defaultValue;
+    }
+
+
+    /**
+     *  Write data to session storage
+     */
+    static setSessionData(data = {}) {
+        sessionStorage.setItem('historyData', JSON.stringify(data));
+    }
+
+
+    /**
+     * Get Data from session storage
+     */
+    static getSessionData() {
+        const data = sessionStorage.getItem('historyData') || null;
+        if (data === null) return {};
+        return JSON.parse(data);
     }
 
 }
