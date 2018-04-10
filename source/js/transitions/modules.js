@@ -1,4 +1,5 @@
 import {mountModules, unMountModules} from 'utils/modules';
+import Barba from 'barba.js';
 
 // VueContainer module holds all children components
 import VueContainer from 'modules/VueContainer.vue';

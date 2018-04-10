@@ -1,8 +1,7 @@
 import * as config from 'config';
 import History from 'transitions/history';
+import Barba from 'barba.js';
 
-// Init Barba.js
-window.Barba = require('barba.js');
 
 // Initalize the views
 require('transitions/views');

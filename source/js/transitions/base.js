@@ -1,4 +1,5 @@
 import {animateOldContainer, animateNewContainer} from 'transitions/timelines/base';
+import Barba from 'barba.js';
 
 export default Barba.BaseTransition.extend({
 
