@@ -13,8 +13,8 @@
         },
 
         mounted() {
-            console.log('Module mounted to ' + this.$el);
-        }
+            console.log(`Module mounted to ${this.$el}`);
+        },
 
     };
 </script>

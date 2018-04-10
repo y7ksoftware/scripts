@@ -3,7 +3,7 @@ import * as config from 'config';
 // ------------------------------------------------------------------------
 // Bugsnag
 // ------------------------------------------------------------------------
-if(config.BUGSNAG_API_KEY_JS) {
+if (config.BUGSNAG_API_KEY_JS) {
     require('boot/bugsnag');
 }
 
@@ -50,7 +50,7 @@ window.axios = require('axios');
 axios.defaults.headers.common = {
     // 'Authorization': 'Bearer ' + config.API_TOKEN,
     // 'X-CSRF-TOKEN': window.csrfToken,
-    'X-Requested-With': 'XMLHttpRequest'
+    'X-Requested-With': 'XMLHttpRequest',
 };
 
 

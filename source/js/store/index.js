@@ -1,5 +1,5 @@
 
-import {disableScroll, enableScroll} from 'utils/scrollDisabler';
+import { disableScroll, enableScroll } from 'utils/scrollDisabler';
 import Vuex from 'vuex';
 
 // ------------------------------------------------------------------------
@@ -15,10 +15,10 @@ const state = {
 // MUTATIONS
 // ------------------------------------------------------------------------
 const mutations = {
-    setActiveUrl (state, activeUrl) {
+    setActiveUrl(state, activeUrl) {
         state.activeUrl = activeUrl;
     },
-    setIsScrollEnabled (state, isScrollEnabled) {
+    setIsScrollEnabled(state, isScrollEnabled) {
         state.isScrollEnabled = isScrollEnabled;
     },
 };
@@ -29,20 +29,20 @@ const mutations = {
 // ------------------------------------------------------------------------
 const actions = {
 
-    setActiveUrl: ({commit}, activeUrl) => commit('setActiveUrl', activeUrl),
+    setActiveUrl: ({ commit }, activeUrl) => commit('setActiveUrl', activeUrl),
 
 
     // Enable body scroll (restore position)
-    enableScroll({commit}) {
-        if(!state.isScrollEnabled) {
+    enableScroll({ commit }) {
+        if (!state.isScrollEnabled) {
             commit('setIsScrollEnabled', true);
             enableScroll();
         }
     },
 
     // Disable body scroll (keep position)
-    disableScroll({commit}) {
-        if(state.isScrollEnabled) {
+    disableScroll({ commit }) {
+        if (state.isScrollEnabled) {
             commit('setIsScrollEnabled', false);
             disableScroll();
         }
@@ -63,5 +63,5 @@ export default new Vuex.Store({
     state,
     getters,
     actions,
-    mutations
+    mutations,
 });

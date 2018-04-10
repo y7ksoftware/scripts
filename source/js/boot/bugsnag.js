@@ -11,4 +11,4 @@ window.Bugsnag.releaseStage = config.APP_ENV;
 window.Bugsnag.appVersion = config.APP_VERSION;
 
 // uncomment 'local' if you want to locally test if bugsnag works
-window.Bugsnag.notifyReleaseStages = [/*'local', */'develop', 'staging', 'production'];
+window.Bugsnag.notifyReleaseStages = [/* 'local', */'develop', 'staging', 'production'];

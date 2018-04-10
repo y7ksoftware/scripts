@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import {mountModules} from 'utils/modules';
+import { mountModules } from 'utils/modules';
 
 // Modules (Global)
-import VueContainer from 'modules/VueContainer.vue';
+import VueContainer from 'modules/VueContainer';
 
 // All Vue components
-import DemoComponent from 'components/DemoComponent.vue';
+import DemoComponent from 'components/DemoComponent';
 
 
 // ------------------------------------------------------------------------
@@ -34,5 +34,6 @@ Vue.component('demo-component', DemoComponent);
 // ------------------------------------------------------------------------
 
 mountModules([
-    VueContainer
+    VueContainer,
 ], document);
+
