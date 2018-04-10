@@ -10,7 +10,7 @@
  *
  */
 export function titleCase(str) {
-    return str.split(' ').map(function(val){
+    return str.split(' ').map((val) => {
         return val.charAt(0).toUpperCase() + val.substr(1).toLowerCase();
     }).join(' ');
 }
@@ -23,7 +23,9 @@ export function titleCase(str) {
  * "a-kebab-word" -> "aKebabWord"
  */
 export function kebabToCamelCase(str) {
-    return str.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+    return str.replace(/-([a-z])/g, (g) => {
+        return g[1].toUpperCase();
+    });
 }
 
 
@@ -36,7 +38,7 @@ export function splitSentence(sentence) {
     const before = sentence.lastIndexOf(' ', middle);
     const after = sentence.indexOf(' ', middle + 1);
 
-    if (before == -1 || (after != -1 && middle - before >= after - middle)) {
+    if (before === -1 || (after !== -1 && middle - before >= after - middle)) {
         middle = after;
     } else {
         middle = before;

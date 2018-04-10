@@ -13,6 +13,6 @@ export function findIndexByAttr(array, attr, value) {
             return i;
         }
     }
+
+    return undefined;
 }
-
-

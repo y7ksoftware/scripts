@@ -5,7 +5,7 @@
  * @return {number}       the number mapped to the new range
  */
 export function mapRange(value, low1, high1, low2, high2) {
-    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+    return low2 + ((high2 - low2) * (value - low1) / (high1 - low1));
 }
 
 
@@ -14,11 +14,11 @@ export function mapRange(value, low1, high1, low2, high2) {
  * how many real pixels a "vw" unit is at the moment.
  */
 export function vwToPx(vw) {
-    var w = window,
-        d = document,
-        e = d.documentElement,
-        g = d.getElementsByTagName('body')[0],
-        x = w.innerWidth || e.clientWidth || g.clientWidth;
+    const w = window;
+    const d = document;
+    const e = d.documentElement;
+    const g = d.getElementsByTagName('body')[0];
+    const x = w.innerWidth || e.clientWidth || g.clientWidth;
     return x / 100 * vw;
 }
 
@@ -28,11 +28,11 @@ export function vwToPx(vw) {
  * how many real pixels a "vh" unit is at the moment.
  */
 export function vhToPx(vh) {
-    var w = window,
-        d = document,
-        e = d.documentElement,
-        g = d.getElementsByTagName('body')[0],
-        y = w.innerHeight || e.clientHeight || g.clientHeight;
+    const w = window;
+    const d = document;
+    const e = d.documentElement;
+    const g = d.getElementsByTagName('body')[0];
+    const y = w.innerHeight || e.clientHeight || g.clientHeight;
     return y / 100 * vh;
 }
 
@@ -40,12 +40,11 @@ export function vhToPx(vh) {
 /**
  * Returns a number with leading zeroes
  */
-export function padNumber(n, width, z) {
-    z = z || '0';
-    n = n + '';
-    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+export function padNumber(number, width, padChar) {
+    const padCharClean = padChar || '0';
+    const numberString = `${number}`;
+    return numberString.length >= width ? numberString : new Array(width - numberString.length + 1).join(padCharClean) + numberString;
 }
-
 
 
 /**

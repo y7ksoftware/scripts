@@ -5,15 +5,14 @@
  */
 
 export function init() {
-
     const TABKEY = 9;
 
     //
     document.addEventListener('keydown', (e) => {
-        if(e.keyCode == TABKEY) {
-            window.setTimeout( () => {
-                let outlinedElements = document.querySelectorAll('.outline');
-                for(let outlinedElement of outlinedElements) {
+        if (e.keyCode === TABKEY) {
+            window.setTimeout(() => {
+                const outlinedElements = document.querySelectorAll('.outline');
+                for (const outlinedElement of outlinedElements) {
                     outlinedElement.classList.remove('outline');
                 }
                 document.activeElement.classList.add('outline');
@@ -23,10 +22,11 @@ export function init() {
 
 
     //
-    document.addEventListener('focusout', (e) => {
-        let outlinedElements = document.querySelectorAll('.outline');
-        for(let outlinedElement of outlinedElements) {
+    document.addEventListener('focusout', () => {
+        const outlinedElements = document.querySelectorAll('.outline');
+        for (const outlinedElement of outlinedElements) {
             outlinedElement.classList.remove('outline');
         }
     });
 }
+
