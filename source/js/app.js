@@ -1,39 +1,25 @@
 import Vue from 'vue';
-import { mountModules } from 'utils/modules';
-
-// Modules (Global)
-import VueContainer from 'modules/VueContainer';
+import { mountVue } from 'utils/vueContainer';
 
 // All Vue components
 import DemoComponent from 'components/DemoComponent';
 
-
 // ------------------------------------------------------------------------
-// BOOT APP
+// Boot App
 // ------------------------------------------------------------------------
-
 require('boot');
 
 // ------------------------------------------------------------------------
-// Enable Barba Page Transitions
+// Enable Barba.js Page Transitions
 // ------------------------------------------------------------------------
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     Barba.Pjax.start();
-//     Barba.Prefetch.init();
-// });
+// require('transitions');
 
 // ------------------------------------------------------------------------
 // Register Vue Components
 // ------------------------------------------------------------------------
-
 Vue.component('demo-component', DemoComponent);
 
 // ------------------------------------------------------------------------
-// Mount normal Vue Components (outside of Barba container)
+// Mount Vue Instances (outside of Barba container)
 // ------------------------------------------------------------------------
-
-mountModules([
-    VueContainer,
-], document);
-
+mountVue('.js-vueContainer', document);
