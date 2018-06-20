@@ -1,5 +1,9 @@
 # Y7K Scripts Changelog
 
+## Version 0.4.*
+* Call it just components, not modules, in vue setup
+* Refactored the transition folder
+
 ## Version 0.3.*
 * Add new Eslint Rules (based in AirBnb)
 * Refactor plate code according to eslint rules
