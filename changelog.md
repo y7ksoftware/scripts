@@ -3,6 +3,7 @@
 ## Version 0.4.*
 * Call it just components, not modules, in vue setup
 * Refactored the transition folder
+* Renamed `source` folder to `src`
 
 ## Version 0.3.*
 * Add new Eslint Rules (based in AirBnb)
