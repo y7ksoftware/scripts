@@ -23,3 +23,10 @@ Vue.component('demo-component', DemoComponent);
 // Mount Vue Instances (outside of Barba container)
 // ------------------------------------------------------------------------
 mountVue('.js-vueContainer', document);
+
+// ------------------------------------------------------------------------
+// Start the app
+// ------------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    document.dispatchEvent(new Event('AppReady'));
+});

@@ -1,4 +1,5 @@
 import * as config from 'config';
+import lazysizes from 'lazysizes';
 
 // ------------------------------------------------------------------------
 // Bugsnag
@@ -29,11 +30,14 @@ require('boot/vue');
 // ------------------------------------------------------------------------
 // Lazysizes
 // ------------------------------------------------------------------------
-// require('lazysizes');
+window.lazySizesConfig = window.lazySizesConfig || {};
+window.lazySizesConfig.init = false;
+
 // require('lazysizes/plugins/object-fit/ls.object-fit.min');
 // require('lazysizes/plugins/parent-fit/ls.parent-fit');
 // require('lazysizes/plugins/unveilhooks/ls.unveilhooks.min');
 
+document.addEventListener('AppReady', lazysizes.init);
 
 // ------------------------------------------------------------------------
 // Axios

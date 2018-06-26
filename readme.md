@@ -35,4 +35,3 @@ However, if you find it useful, postcards to our office are appreciated: Y7K, Zu
 ## Roadmap
 
 * Use polyfills.io
-* Refactor barba.js code
