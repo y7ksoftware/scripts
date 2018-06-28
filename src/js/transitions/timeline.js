@@ -1,9 +1,13 @@
-// import {TimelineLite, TweenLite} from 'gsap'
+// import { tween, styler } from 'popmotion';
 
 export function animateOldContainer(/* oldContainer */) {
     return new Promise((resolve) => {
-        // Example with GSAP
-        // new TimelineLite({ onComplete: resolve}).to(oldContainer, 0.5, {opacity: 0 }, '+=0');
+        // Example with Popmotion
+        // tween({ from: 1, to: 0, duration: 200 })
+        // .start({
+        //     update: styler(oldContainer).set('opacity'),
+        //     complete: resolve,
+        // });
 
         // Remove this, if you use the animation above!
         resolve();
@@ -12,13 +16,12 @@ export function animateOldContainer(/* oldContainer */) {
 
 export function animateNewContainer(/* newContainer */) {
     return new Promise((resolve) => {
-        // Example with GSAP
-        // new TimelineLite({
-        //     onComplete: () => {
-        //         TweenLite.set(newContainer,{ clearProps:'all' });
-        //         resolve();
-        //     }
-        // }).from(newContainer, 0.5, {opacity: 0 }, '+=0');
+        // Example with Popmotion
+        // tween({ to: 1, duration: 200 })
+        // .start({
+        //     update: styler(newContainer).set('opacity'),
+        //     complete: resolve,
+        // });
 
         // Remove this, if you use the animation above!
         resolve();

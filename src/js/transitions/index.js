@@ -1,10 +1,16 @@
 import Barba from 'barba.js';
 import store from 'store';
+import Transition from 'transitions/transition';
 
 // ------------------------------------------------------------------------
 // INITIALIZE BARBA.JS
 // ------------------------------------------------------------------------
 require('transitions/boot');
+
+// ------------------------------------------------------------------------
+// SET TRANSITION
+// ------------------------------------------------------------------------
+Barba.Pjax.getTransition = () => Transition;
 
 // ------------------------------------------------------------------------
 // INITIALIZE THE VIEWS

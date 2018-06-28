@@ -1,6 +1,5 @@
 import * as config from 'config';
 import History from 'transitions/boot/history';
-import Transition from 'transitions/boot/transition';
 import { mountVue, unMountVue } from 'utils/vueContainer';
 import Barba from 'barba.js';
 
@@ -52,13 +51,6 @@ Barba.Pjax.preventCheck = (evt, element) => {
     }
 
     return true;
-};
-
-// ------------------------------------------------------------------------
-// SET TRANSITION
-// ------------------------------------------------------------------------
-Barba.Pjax.getTransition = () => {
-    return Transition;
 };
 
 // ------------------------------------------------------------------------
