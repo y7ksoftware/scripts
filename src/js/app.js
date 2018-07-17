@@ -25,8 +25,17 @@ Vue.component('demo-component', DemoComponent);
 mountVue('.js-vueContainer', document);
 
 // ------------------------------------------------------------------------
-// Start the app
+// Triggers once the app has been launched
 // ------------------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-    document.dispatchEvent(new Event('AppReady'));
+document.addEventListener('AppReady', () => {
+    document.documentElement.classList.remove('no-fouc');
 });
+
+// ------------------------------------------------------------------------
+// Launch the app
+// ------------------------------------------------------------------------
+if (document.readyState === 'complete') {
+    document.dispatchEvent(new Event('AppReady'));
+} else {
+    document.addEventListener('DOMContentLoaded', () => document.dispatchEvent(new Event('AppReady')));
+}

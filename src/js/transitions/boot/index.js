@@ -68,7 +68,7 @@ Barba.Dispatcher.on('animateOldContainerEnded', () => {
 // ------------------------------------------------------------------------
 // ACTIVATE BARBA.JS
 // ------------------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('AppReady', () => {
     Barba.Pjax.start();
     Barba.Prefetch.init();
 });
