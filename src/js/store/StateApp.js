@@ -4,7 +4,7 @@ import Vue from 'vue';
 // STATE
 // ------------------------------------------------------------------------
 const state = {
-
+    activeUrl: '',
 };
 
 
@@ -12,7 +12,9 @@ const state = {
 // MUTATIONS
 // ------------------------------------------------------------------------
 const mutations = {
-
+    setActiveUrl(state, activeUrl) {
+        state.activeUrl = activeUrl;
+    },
 };
 
 
