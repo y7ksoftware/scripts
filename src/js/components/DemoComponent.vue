@@ -3,7 +3,7 @@
     /**
      * Vue Component to use with "inline-template" in twig templates.
      *
-     * As long as it is inside a parent vue MODULE (e.g. "VueContainer"), it
+     * As long as it is inside a parent vue-container (see "utils/vueContainer")
      * is mounted automatically and can be nested as far as you want.
      *
      * <demo-component inline-template>
