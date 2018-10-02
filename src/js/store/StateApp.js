@@ -1,4 +1,3 @@
-import Vue from 'vue';
 
 // ------------------------------------------------------------------------
 // STATE
@@ -39,5 +38,5 @@ export default {
     state,
     getters,
     actions,
-    mutations
+    mutations,
 };
