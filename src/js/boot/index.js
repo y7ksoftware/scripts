@@ -53,6 +53,9 @@ axios.defaults.headers.common = {
 
 
 // ------------------------------------------------------------------------
-// Tools
+// Component Hooks
+//
+// If you install Y7K components, they add their setup code here
+// (Keep the "hook" line below)
 // ------------------------------------------------------------------------
-require('boot/tools');
+// $cli-hook-tools-init$
