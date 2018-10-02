@@ -1,5 +1,5 @@
 import * as config from 'config';
-import History from 'transitions/boot/history';
+import History from 'barba/boot/history';
 import { mountVue, unMountVue } from 'utils/vueContainer';
 import Barba from 'barba.js';
 
