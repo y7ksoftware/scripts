@@ -10,11 +10,6 @@ import DemoComponent from 'components/DemoComponent';
 require('boot');
 
 // ------------------------------------------------------------------------
-// Enable Barba.js Page Transitions
-// ------------------------------------------------------------------------
-// require('transitions');
-
-// ------------------------------------------------------------------------
 // Register Vue Components
 // ------------------------------------------------------------------------
 Vue.component('demo-component', DemoComponent);
