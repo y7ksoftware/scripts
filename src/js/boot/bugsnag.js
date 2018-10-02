@@ -6,7 +6,7 @@ import * as config from 'config';
 
 window.Bugsnag = require('bugsnag-js');
 
-window.Bugsnag.apiKey = config.BUGSNAG_API_KEY_JS;
+window.Bugsnag.apiKey = config.BUGSNAG_API_KEY;
 window.Bugsnag.releaseStage = config.APP_ENV;
 window.Bugsnag.appVersion = config.APP_VERSION;
 
