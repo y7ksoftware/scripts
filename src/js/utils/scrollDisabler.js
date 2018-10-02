@@ -6,7 +6,7 @@
  * This way we can easily add modal windows with scroll
  */
 
-const savedScrollPos = 0;
+let savedScrollPos = 0;
 
 
 /**
