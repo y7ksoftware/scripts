@@ -56,11 +56,18 @@ Barba.Pjax.preventCheck = (evt, element) => {
 // ------------------------------------------------------------------------
 // INITIALIZE VUE CONTAINER
 // ------------------------------------------------------------------------
+
+// If the new container is loaded, we need to make sure, vue components are initialized in the new container
+// and vue components of the old container are removed correctly
+// Therefore, we mount the barba vue container when the new page is ready
 Barba.Dispatcher.on('newPageReady', (currentStatus, oldStatus, container) => {
     Barba.BaseView.oldMountedVue = Barba.BaseView.mountedVue;
     Barba.BaseView.mountedVue = mountVue(`.${Barba.Pjax.Dom.vueContainerClass}`, container);
 });
 
+// And if the old container is finished animating (and should be invisible by now),
+// we can unmount all vue elements in the old container. This will correctly call "destroy()"
+// on this vue components.
 Barba.Dispatcher.on('animateOldContainerEnded', () => {
     unMountVue(Barba.BaseView.oldMountedVue);
 });

@@ -1,16 +1,13 @@
 import Barba from 'barba.js';
 import store from 'store';
-import transition from 'barba/baseTransition';
+import transitionDefault from 'barba/transitions/transitionDefault';
+import transitionExample from 'barba/transitions/transitionExample';
 
 // ------------------------------------------------------------------------
 // INITIALIZE BARBA.JS
 // ------------------------------------------------------------------------
 require('barba/boot');
 
-// ------------------------------------------------------------------------
-// SET TRANSITION
-// ------------------------------------------------------------------------
-Barba.Pjax.getTransition = () => transition;
 
 // ------------------------------------------------------------------------
 // INITIALIZE THE VIEWS
@@ -32,3 +29,18 @@ Barba.Dispatcher.on('newPageReady', (currentStatus /* , oldStatus */ /* , contai
 
     // Add other tracking library updates here
 });
+
+
+// ------------------------------------------------------------------------
+// SET TRANSITION
+//
+// You can create multiple transitions and list them here. The first valid one
+// will be chosen with other transitions as fallback.
+// ------------------------------------------------------------------------
+Barba.Pjax.getTransition = () => {
+    if (transitionExample.isValid()) {
+        return transitionExample;
+    }
+
+    return transitionDefault;
+};
