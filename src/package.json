@@ -5,6 +5,7 @@
         "bugsnag-js": "^3.2.2",
         "babel-polyfill": "^6.26.0",
         "lazysizes": "^4.0.0-rc3",
+        "popmotion": "^8.4.1",
         "vue": "^2.4.4",
         "vue-i18n": "^7.3.0",
         "vuex": "^2.4.0"

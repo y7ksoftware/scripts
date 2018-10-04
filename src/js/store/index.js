@@ -7,7 +7,7 @@ const store = new Vuex.Store({
     modules: {
         app: StateApp,
         scroll: StateScroll,
-    }
+    },
 });
 
 window.store = store;

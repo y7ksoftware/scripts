@@ -1,5 +1,5 @@
 
-// CAUTION: THIS ESLINT CONFIG IS ONLY TO LINT THE PLATE CODE AND WILL NOT BE COPIED TO A NEW PROJECT
+// CAUTION: THIS ESLINT CONFIG IS ONLY TO LINT THE JS PLATE CODE AND WILL NOT BE COPIED TO A NEW PROJECT
 
 
 // https://eslint.org/docs/user-guide/configuring
@@ -37,7 +37,7 @@ module.exports = {
         'no-underscore-dangle': 0,
         'no-plusplus': 0,
 
-        // don't require .vue extension when importing
+        // don't require .vue and .js extension when importing
         'import/extensions': ['error', 'ignorePackages', {
             js: 'never',
             vue: 'never'
