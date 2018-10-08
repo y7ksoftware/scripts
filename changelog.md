@@ -1,5 +1,18 @@
 # Y7K Scripts Changelog
 
+## Version 1.0.*
+* Updated Versioning to include major releases
+* Completely refactor barba.js transitions
+* Move barba initialization code to "boot"
+* Use namespaced Vuex stores
+* Remove outdated "/util" helpers
+* Remove "boot/tools" (not needed anymore)
+* Update eslint
+* Refactor frontend constants (now "window.backendConfig" instead of "window.App.constants")
+* Remove unnecessary, outdated configs including bugsnag
+* Add and streamline backend->frontend constants
+* Simplify and refactor various
+
 ## Version 0.4.*
 * Call it just components, not modules, in vue setup
 * Refactored the transition folder
