@@ -1,5 +1,9 @@
 # Y7K Scripts Changelog
 
+## Version 1.1.*
+* Remove lazysizes (its now a component)
+* Add CustomEvent Polyfill
+
 ## Version 1.0.*
 * Updated Versioning to include major releases
 * Completely refactor barba.js transitions
