@@ -30,7 +30,7 @@ document.addEventListener('AppReady', () => {
 // Launch the app
 // ------------------------------------------------------------------------
 if (document.readyState === 'complete') {
-    document.dispatchEvent(new Event('AppReady'));
+    document.dispatchEvent(new CustomEvent('AppReady'));
 } else {
-    document.addEventListener('DOMContentLoaded', () => document.dispatchEvent(new Event('AppReady')));
+    document.addEventListener('DOMContentLoaded', () => document.dispatchEvent(new CustomEvent('AppReady')));
 }
