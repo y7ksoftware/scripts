@@ -1,5 +1,4 @@
 export default {
 
-    message: 'Guten Bonjour!',
-
+    message: 'Good Day to you!',
 };

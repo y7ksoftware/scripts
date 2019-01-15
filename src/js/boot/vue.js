@@ -2,7 +2,6 @@
 
 import Vue from 'vue';
 import * as config from 'config';
-// import VueIl8n from 'vue-i18n';
 import Vuex from 'vuex';
 
 Vue.config.silent = !config.APP_DEBUG;
@@ -16,9 +15,7 @@ Vue.mixin({ delimiters: ['${', '}'] });
 // ------------------------------------------------------------------------
 // Vue Multilanguage
 // ------------------------------------------------------------------------
-// Vue.use(VueIl8n);
-// Vue.config.lang = 'en';
-// Vue.locale('en', require('locales/en').default);
+// require('boot/vue-i18n');
 
 
 // ------------------------------------------------------------------------

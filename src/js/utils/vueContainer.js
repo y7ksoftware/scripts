@@ -1,6 +1,8 @@
 /* eslint-disable no-param-reassign */
 
 import Vue from 'vue';
+// import i18n from 'boot/vue-i18n';
+
 
 export function mountVue(elementSelector, container) {
 
@@ -11,7 +13,10 @@ export function mountVue(elementSelector, container) {
 
     // mount vue instance to all elements
     for (let j = 0; j < elements.length; j++) {
-        const instance = new Vue({ name: 'VueContainer' }).$mount(elements[j]);
+        const instance = new Vue({
+            name: 'VueContainer',
+            i18n: typeof i18n !== 'undefined' ? i18n : null,
+        }).$mount(elements[j]);
         loadedContainers.push(instance);
     }
 
