@@ -8,14 +8,37 @@ Vue components are mounted on existing markup.
 
 ## Structure
 
-... 
+### Api
+Place functions to call API endpoints here
+
+### Barba
+Contains all barba.js logic
+
+### Boot
+Contains all app initiation logic. Loads components, libraries etc.
+
+### Components
+Place all independent components, including Vue components here
+
+### Config
+Contains static configs
+
+### Locales
+Contains i18n locale dictionaries
+
+### Store
+Contains Vuex store
+
+### Utils
+Contains helper utility functions
+
+### Vendor
+Contains vendor libaries that can't be loaded via npm
 
 ## Third Party Libraries
 
 * [axios](https://github.com/axios/axios)
 * [barba](https://github.com/luruke/barba.js/)
-* [bugsnag](https://bugsnag.com)
-* [babel-polyfill](https://babeljs.io/)
 * [lazysizes](https://github.com/aFarkas/lazysizes)
 * [vue](http://vuejs.org)
 * [vue-i18n](https://kazupon.github.io/vue-i18n/)
@@ -25,6 +48,7 @@ Vue components are mounted on existing markup.
 * [@exophunk](https://github.com/exophunk)
 * [@jorisnoo](https://github.com/jorisnoo)
 * [@vdrnn](https://github.com/vdrnn)
+* * [@bergrebell](https://github.com/bergrebell)
 
 ## License
 
@@ -34,4 +58,3 @@ However, if you find it useful, postcards to our office are appreciated: Y7K, Zu
 
 ## Roadmap
 
-* Use polyfills.io

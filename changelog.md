@@ -1,5 +1,12 @@
 # Y7K Scripts Changelog
 
+
+## Version 2.0.* - 2019-01-15
+* Disable barba.js booting by default
+* Add backend LOCALE to frontend config constants
+* Refactor vue-i18n booting and disable it by default
+* Add URL util
+
 ## Version 1.1.*
 * Remove lazysizes (its now a component)
 * Add CustomEvent Polyfill
