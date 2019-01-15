@@ -9,4 +9,5 @@ export const {
     BUGSNAG_API_KEY,
     API_PREFIX,
     CSRF_TOKEN,
+    LOCALE,
 } = backendConfig;
