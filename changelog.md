@@ -1,6 +1,10 @@
 # Y7K Scripts Changelog
 
 
+## Version 3.0.* - 2019-01-30
+* Disable babel polyfills in favour of polyfills.io
+* Simplify vue boot
+
 ## Version 2.0.* - 2019-01-15
 * Disable barba.js booting by default
 * Add backend LOCALE to frontend config constants
